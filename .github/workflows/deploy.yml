@@ -24,6 +24,16 @@ jobs:
     - name: Install deps
       run: |
         npm ci
+    # - name: Build TinaCMS
+    #   env:
+    #     TINA_PUBLIC_CLIENT_ID: ${{ secrets.TINA_PUBLIC_CLIENT_ID }}
+    #     TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+    #   run: npx tinacms build
+    - name: Build TinaCMS
+      env:
+        TINA_PUBLIC_CLIENT_ID: ${{ secrets.CLIENT_ID }}
+        TINA_TOKEN: ${{ secrets.READ_TOKEN }}
+      run: npx tinacms build
     - name: Build site
       env:
         CLIENT_ID: ${{ secrets.CLIENT_ID }}

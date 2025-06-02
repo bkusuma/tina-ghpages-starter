@@ -41,7 +41,7 @@ jobs:
       run: |
         npm run tinacms build && bundle exec jekyll build
     - name: Deploy
-      uses: JamesIves/github-pages-deploy-action
+      uses: JamesIves/github-pages-deploy-action@v4
       env:
         CLIENT_ID: ${{ secrets.CLIENT_ID }}
         READ_TOKEN: ${{ secrets.READ_TOKEN }}
